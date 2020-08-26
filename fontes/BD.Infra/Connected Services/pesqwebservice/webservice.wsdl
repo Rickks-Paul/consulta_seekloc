@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:pesqwebservice" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:pesqwebservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:pesqwebservice">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getalldatabycpfRequest">
+    <wsdl:part name="usr" type="xsd:string" />
+    <wsdl:part name="pwd" type="xsd:string" />
+    <wsdl:part name="emp" type="xsd:string" />
+    <wsdl:part name="cpf" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getalldatabycpfResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getveicdataRequest">
+    <wsdl:part name="usr" type="xsd:string" />
+    <wsdl:part name="pwd" type="xsd:string" />
+    <wsdl:part name="emp" type="xsd:string" />
+    <wsdl:part name="veic" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getveicdataResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="pesqwebservicePortType">
+    <wsdl:operation name="getalldatabycpf">
+      <documentation>Pesquisa telefones por cpf</documentation>
+      <wsdl:input message="tns:getalldatabycpfRequest" />
+      <wsdl:output message="tns:getalldatabycpfResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getveicdata">
+      <documentation>Pesquisa dados de veiculos por PLACA ou RENAVAN</documentation>
+      <wsdl:input message="tns:getveicdataRequest" />
+      <wsdl:output message="tns:getveicdataResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="pesqwebserviceBinding" type="tns:pesqwebservicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="getalldatabycpf">
+      <soap:operation soapAction="urn:pesqwebservice#getalldatabycpf" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:pesqwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:pesqwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getveicdata">
+      <soap:operation soapAction="urn:pesqwebservice#getveicdata" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:pesqwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:pesqwebservice" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="pesqwebservice">
+    <wsdl:port name="pesqwebservicePort" binding="tns:pesqwebserviceBinding">
+      <soap:address location="http://200.201.193.100/seekloc/webservice.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

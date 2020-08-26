@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE97A277-6A04-497C-9BE2-CD10E9593ECD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BD.Infra</RootNamespace>
+    <AssemblyName>BD.Infra</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Mailjet.Client">
+      <HintPath>..\..\Lib\Mailjet.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\pesqwebservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Mapping\AplicativoMAP.cs" />
+    <Compile Include="Mapping\AssinaturaMAP.cs" />
+    <Compile Include="Mapping\AtividadeMAP.cs" />
+    <Compile Include="Mapping\ConfiguracaoMAP.cs" />
+    <Compile Include="Mapping\CPFBloqueadoMAP.cs" />
+    <Compile Include="Mapping\CreditoMAP.cs" />
+    <Compile Include="Mapping\EnderecoAtualizadoMAP.cs" />
+    <Compile Include="Mapping\ErroConsultaMAP.cs" />
+    <Compile Include="Mapping\ErroLoginMAP.cs" />
+    <Compile Include="Mapping\ErroSistemaMAP.cs" />
+    <Compile Include="Mapping\LimiteUsuarioMAP.cs" />
+    <Compile Include="Mapping\LogConsultaMAP.cs" />
+    <Compile Include="Mapping\PedidoMAP.cs" />
+    <Compile Include="Mapping\PedidoTecnicoMAP.cs" />
+    <Compile Include="Mapping\PessoaFisica2MAP.cs" />
+    <Compile Include="Mapping\PessoafisicaEmailMap.cs" />
+    <Compile Include="Mapping\PessoafisicaEmpregoMap.cs" />
+    <Compile Include="Mapping\PessoafisicaEnderecoMap.cs" />
+    <Compile Include="Mapping\PessoaFisicaMAP.cs" />
+    <Compile Include="Mapping\PessoafisicaParenteMap.cs" />
+    <Compile Include="Mapping\PessoafisicaTelefoneMap.cs" />
+    <Compile Include="Mapping\PessoafisicaVeiculoMap.cs" />
+    <Compile Include="Mapping\PessoafisicaVizinhoMap.cs" />
+    <Compile Include="Mapping\PessoaJuridicaAtividadeMAP.cs" />
+    <Compile Include="Mapping\PessoaJuridicaMAP.cs" />
+    <Compile Include="Mapping\PessoaJuridicaQSAMAP.cs" />
+    <Compile Include="Mapping\RecuperacaoSenhaMAP.cs" />
+    <Compile Include="Mapping\ServicoMAP.cs" />
+    <Compile Include="Mapping\TelefoneMAP.cs" />
+    <Compile Include="Mapping\TelefoneUsuarioMAP.cs" />
+    <Compile Include="Mapping\UsuarioMAP.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AplicativoRepository.cs" />
+    <Compile Include="Repository\AssinaturaRepository.cs" />
+    <Compile Include="Repository\AtividadeRepository.cs" />
+    <Compile Include="Repository\ConfiguracaoRepository.cs" />
+    <Compile Include="Repository\CPFBloqueadoRepository.cs" />
+    <Compile Include="Repository\CreditoRepository.cs" />
+    <Compile Include="Repository\EmailRepository.cs" />
+    <Compile Include="Repository\EnderecoAtualizadoRepository.cs" />
+    <Compile Include="Repository\ErroConsultaRepository.cs" />
+    <Compile Include="Repository\ErroLoginRepository.cs" />
+    <Compile Include="Repository\ErroSistemaRepository.cs" />
+    <Compile Include="Repository\OldNHibernateRepository.cs" />
+    <Compile Include="Repository\LimiteUsuarioRepository.cs" />
+    <Compile Include="Repository\LogConsultaRepository.cs" />
+    <Compile Include="Repository\NHibernateRepository.cs" />
+    <Compile Include="Repository\PedidoRepository.cs" />
+    <Compile Include="Repository\PedidoTecnicoRepository.cs" />
+    <Compile Include="Repository\PessoaFisica2Repository.cs" />
+    <Compile Include="Repository\PessoaFisicaRepository.cs" />
+    <Compile Include="Repository\RecuperacaoSenhaRepository.cs" />
+    <Compile Include="Repository\ServicoRepository.cs" />
+    <Compile Include="Repository\TelefoneUsuarioRepository.cs" />
+    <Compile Include="Repository\UsuarioRepository.cs" />
+    <Compile Include="Service\EmailService.cs" />
+    <Compile Include="UnitOfWork\NHibernateUnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\pesqwebservice\webservice.wsdl" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BD.DI\BD.DI.csproj">
+      <Project>{2B453F1D-5DC1-4C8C-B5B2-5F4EEA3FEB4E}</Project>
+      <Name>BD.DI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BD.Domain\BD.Domain.csproj">
+      <Project>{33ae260c-9cc7-45ba-8227-61090a2231d9}</Project>
+      <Name>BD.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\pesqwebservice\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\pesqwebservice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\pesqwebservice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\pesqwebservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
